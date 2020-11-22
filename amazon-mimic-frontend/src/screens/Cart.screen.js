@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {addToCart} from '../actions/cartActions'
+import {addToCart, removeFromCart} from '../actions/cartActions'
 import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
@@ -25,6 +25,7 @@ export default function CartScreen(props) {
 
    const removeFromCartHandler=(id)=>{
        // delete action will execute
+       dispatch(removeFromCart(id));
    }
 
    const checkoutHandler=()=>{
